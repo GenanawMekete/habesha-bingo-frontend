@@ -7,11 +7,11 @@ export default defineConfig({
     port: 3001,
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: process.env.VITE_API_URL || 'http://localhost:3000',
         changeOrigin: true,
       },
       '/socket.io': {
-        target: 'http://localhost:3000',
+        target: process.env.VITE_API_URL || 'http://localhost:3000',
         ws: true,
       }
     }
@@ -23,10 +23,13 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
-          animations: ['framer-motion', 'gsap'],
-          ui: ['lucide-react', 'react-hot-toast']
+          ui: ['framer-motion', 'axios']
         }
       }
     }
+  },
+  define: {
+    // Use environment variables at build time
+    'process.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL)
   }
 })
