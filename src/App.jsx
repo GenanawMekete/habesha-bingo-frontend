@@ -18,3 +18,6 @@ function AppRouter() {
     </Routes>
   );
 }
+
+
+export default App;
