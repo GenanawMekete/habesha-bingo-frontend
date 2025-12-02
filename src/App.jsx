@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { Toaster } from 'react-hot-toast';
-import useTelegramAuth from './hooks/useTelegramAuth';
-import telegramService from './services/telegram';
-import './App.css';
+//import React, { useEffect } from 'react';
+//import { Toaster } from 'react-hot-toast';
+//import useTelegramAuth from './hooks/useTelegramAuth';
+//import telegramService from './services/telegram';
+//import './App.css';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import { handleTelegramDeepLink } from './utils/deepLinks';
 
